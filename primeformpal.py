@@ -368,7 +368,7 @@ def display_prime(prime_form, less_only):
 			print(f"Derivative {prettify_derivative(derivative)}  -- yields sum {sum(derivative[1:])}  <<=== EQUAL")
 			equal_derivative_found = True
 		elif sum(derivative[1:]) < sum(prime_form):
-			print(f"Derivative {prettify_derivative(derivative)}  -- yields sum {sum(derivative[1:])}  <<=== LESS")
+			print(f"Derivative {prettify_derivative(derivative)}  -- yields sum {sum(derivative[1:])}  <<=== LESS ==== DING DING LESS")
 			lesser_derivative_found = True
 		else:
 			print(f"Derivative {prettify_derivative(derivative)}  -- yields sum {sum(derivative[1:])}")
