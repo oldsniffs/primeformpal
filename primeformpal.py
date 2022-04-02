@@ -302,7 +302,7 @@ def get_derivatives(prime_form):
 
 	# collect all derivatives in a list
 	# A derivative is: [(starting index of prime list, direction), list of steps]
-	for position in prime_form:
+	for position in prime_form[1:]:
 
 		# Clockwise
 		# iterate down through 
@@ -358,7 +358,7 @@ def prettify_derivative(derivative):
 def display_prime(prime_form, less_only):
 	# iterate through derivatives, creating a single line display string for each, including its sum and a flag if it is less than the prime's
 
-	print(f"======> Prime Form: {prettify_sequence(prime_form)} {'---> '+str(sum(prime_form))}")   # Aligh "SUMS" at right, sums underneath
+	print(f"======> Prime Form: {prettify_sequence(prime_form)}-{len(prime_form)} {'---> '+str(sum(prime_form))}")   # Aligh "SUMS" at right, sums underneath
 	lesser_derivative_found = False
 	equal_derivative_found = False
 	for derivative in get_derivatives(prime_form):
@@ -372,6 +372,8 @@ def display_prime(prime_form, less_only):
 			lesser_derivative_found = True
 		else:
 			print(f"Derivative {prettify_derivative(derivative)}  -- yields sum {sum(derivative[1:])}")
+	if not lesser_derivative_found and not equal_derivative_found:
+		print('No equal or lesser derivatives found')
 	print('\n')
 
 
